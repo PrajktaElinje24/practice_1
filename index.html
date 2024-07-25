@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Square Finder</title>
+    <style>
+        * {
+            font-size: 50px;
+        }
+
+        body {
+            background-color: aqua;
+            text-align: center; /* Center align content */
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Square Finder App</h1>
+    <form onsubmit="show()">
+        <input type="number" step="any" placeholder="Enter the number" id="name" /> <br><br>
+        <input type="submit" value="Find Square" />
+    </form>
+    <h2 id="msg"></h2>
+    <script>
+        function show() {
+            event.preventDefault();
+            let num = document.getElementById("name");
+            let msg = document.getElementById("msg");
+
+            if (num.value === "") {
+                alert("You should enter a number");
+                msg.innerHTML = "";
+                num.focus();
+                return;
+            }
+
+            let n = parseFloat(num.value);
+            let r = n ** 2;
+            let a = "Square of Number is = " + r.toFixed(2);
+            msg.innerHTML = a;
+        }
+    </script>
+</body>
+
+</html>
